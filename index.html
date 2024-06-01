@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Larry's Lamps</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Larry's Lamps</h1>
+    </header>
+    <main>
+        <p>Larry's Lamps specializes in building custom lamps out of strange things. It's called upcycled art.</p>
+
+        <section>
+            <h2>About Larry's Lamps</h2>
+            <p>Larry's Lamps specializes in building custom lamps out of strange things. It's called upcycled art.</p>
+            <img src="about-larrys-lamps.jpg" alt="About Larry's Lamps">
+        </section>
+
+        <section>
+            <h2>Where can I find these lamps?</h2>
+            <p>Check out our unique lamp pieces:</p>
+            <ul id="lampList"></ul>
+        </section>
+        <p>Check out our unique lamps pieces:</p>
+        <ul id="lampList"></ul>
+    </main>
+
+    <script>
+        // Define the folder names
+        const folders = ["availble", "sold"];
+
+        // Get the reference to the lampList ul element
+        const lampList = document.getElementById("lampList");
+
+        // Loop through the folders and create the links dynamically
+        folders.forEach(folder => {
+            // Create the li and a elements
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+
+            // Set the href attribute of the a element
+            a.href = `${folder}/`;
+
+            // Set the text content of the a element
+            a.textContent = `Lamp ${folder}`;
+
+            // Append the a element to the li element
+            li.appendChild(a);
+
+            // Append the li element to the lampList ul element
+            lampList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
